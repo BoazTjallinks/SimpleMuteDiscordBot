@@ -1,0 +1,12 @@
+{
+  "name": "Snapix_Discordbot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://git.b04z.dev/Snapix/Snapix_Discordbot.git",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "discord.js": "^12.3.1",
+    "express": "^4.17.1"
+  }
+}
