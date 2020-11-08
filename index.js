@@ -34,12 +34,6 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-// parse application/x-www-form-urlencoded
-// app.use(bodyParser.urlencoded({ extended: false }))
-
-// parse application/json
-// app.use(bodyParser.text({ type: 'text/html' }))
-
 expressApi(app, client);
 
 
@@ -67,24 +61,6 @@ client.on('message', msg => {
         }
     }
 });
-
-client.on("messageReactionAdd", (reaction, user) => {
-    console.log(reaction.emoji.name)
-    if (reaction.message.id === msgId) {
-
-        if (reaction.emoji.name === "Minecraft") {
-            const role = reaction.message.channel.guild.roles.cache.find(role => role.name == "Minecraft");
-            reaction.message.guild.member(user).roles.add(role);
-        } else if (reaction.emoji.name === "RocketLeague") {
-            const role = reaction.message.channel.guild.roles.cache.find(role => role.name == "Rocket League");
-            reaction.message.guild.member(user).roles.add(role);
-        } else if (reaction.emoji.name === "AmongUs") {
-            const role = reaction.message.channel.guild.roles.cache.find(role => role.name == "Among us");
-            reaction.message.guild.member(user).roles.add(role);
-        } else {}
-    }
-});
-
 
 client.login(config.DiscordToken);
 
